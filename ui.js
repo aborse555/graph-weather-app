@@ -21,14 +21,20 @@ async function displayWeather() {
     var cityName = document.getElementById('cityName');
     cityName.innerText = city.city;
     
-    function drawWeather( d ) {        
-        document.getElementById('description').innerHTML = d.weather[0].description;
-        document.getElementById('temp').innerHTML = d.main.temp+ '&deg;';
-        document.getElementById('location').innerHTML = d.name;}
-
+    function getWeather( w ) {        
+        document.getElementById('description').innerHTML = w.weather[0].description;
+        document.getElementById('temp').innerHTML = w.main.temp + '&deg;' + 'F';
+        const icon = w.weather[0].icon;
+        let img = document.createElement("img");
+        img.src = "https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/"+icon+".svg";
+        img.style.height = "200px"
+        img.style.width = "200px"
+        document.body.appendChild(img);
+    }
+    
     fetch('https://api.openweathermap.org/data/2.5/weather?&appid=47ddd980562ebce5a65128586fa3a841&units=imperial&q='+city.city+'')  
-        .then(function(resp) { return resp.json() }) // Convert data to json
-        .then(function(data) { drawWeather(data)})
+        .then(function(resp) { return resp.json() }) 
+        .then(function(data) { getWeather(data)})
     
     var btnShowWeather = document.getElementById('btnShowWeather');
     btnShowWeather.style = "display: none";
