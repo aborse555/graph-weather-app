@@ -20,12 +20,16 @@ async function displayWeather() {
     wrapperShowWeather.style = "display: block";
     var cityName = document.getElementById('cityName');
     cityName.innerText = city.city;
+    
+    function drawWeather( d ) {        
+        document.getElementById('description').innerHTML = d.weather[0].description;
+        document.getElementById('temp').innerHTML = d.main.temp+ '&deg;';
+        document.getElementById('location').innerHTML = d.name;}
 
-    let text = "Your Current Weather";
-    let result = text.link("https://api.openweathermap.org/data/2.5/weather?&appid=47ddd980562ebce5a65128586fa3a841&units=imperial&q="+city.city+"");
-    document.getElementById("weather").innerHTML = result;
+    fetch('https://api.openweathermap.org/data/2.5/weather?&appid=47ddd980562ebce5a65128586fa3a841&units=imperial&q='+city.city+'')  
+        .then(function(resp) { return resp.json() }) // Convert data to json
+        .then(function(data) { drawWeather(data)})
     
     var btnShowWeather = document.getElementById('btnShowWeather');
     btnShowWeather.style = "display: none";
 }
-
