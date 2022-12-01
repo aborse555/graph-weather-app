@@ -16,8 +16,13 @@
     </a>
     <button id="btnShowWeather" style="display: none;" onclick="displayWeather();">Show Weather</button>
 <div id="eventWrapper" style="display: none;">
-  <p>Your weather using your location retrieved from Microsoft Graph! You are in <span id="cityName"></span>! Make sure you have a JSON formatter.</p>
+  <p>Your weather using your location retrieved from Microsoft Graph! You are in <span id="cityName"></span>!</p>
   <ul id="weather"></ul>
+</div>
+<div id="weather">
+  <div id="description"></div>
+  <h1 id="temp"></h1>
+  <div id="location"></div>
 </div>
   </main>
   <script src="https://alcdn.msauth.net/browser/2.1.0/js/msal-browser.min.js"
