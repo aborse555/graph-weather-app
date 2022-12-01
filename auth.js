@@ -1,7 +1,7 @@
 const msalConfig = {
     auth: {
         clientId: '2f3ba420-7029-4832-8684-d68dfc88da75',
-        authority: 'https://login.microsoftonline.com/d6343968-ef1b-4674-916e-376d919fea84',
+        authority: 'https://login.microsoftonline.com/common',
         redirectUri: 'http://localhost:8080'
     }
 };
