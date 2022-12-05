@@ -38,4 +38,4 @@ async function displayWeather() {
     
     var btnShowWeather = document.getElementById('btnShowWeather');
     btnShowWeather.style = "display: none";
-}
+}p
