@@ -18,5 +18,5 @@ async function getCity() {
     return await graphClient
         .api('/me/?$select=displayName,city')
         .select('city')
-        .get();s
+        .get();
 }
