@@ -6,4 +6,4 @@ For Microsoft 30 Days of Graph, I created a simple webpage that uses the Graph p
 This was the first time I had coded, so it was a very educational experience! I am glad for the experience and opportunity to gain new skills!
 I used Visual Studio Code, Graph Explorer, and Node.js. 
 For any issues, I used Microsoft Learn and GitHub to troubleshoot.
-To use, download zip and write "npm start" in your terminal.
+To use, download zip, use Git, or clone from Code button and type "npm start" in your terminal.
